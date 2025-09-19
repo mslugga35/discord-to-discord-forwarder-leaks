@@ -1,0 +1,92 @@
+● 📋 COMPLETE LIST OF ALL BOTS & PROCESSES
+
+  1. DISCORD FORWARDER (Python)
+
+  - Name: discord-forwarder-python
+  - Purpose: Forwards messages from 49 Discord source channels to destination channels
+  - Location: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\discord-forwarder\forwarder.py
+  - What it does: Monitors sports betting Discord servers and forwards picks/tips
+  - Rate Limits: 10 seconds between channels, 5 minutes between full cycles
+  - Token: Uses Discord user token for reading messages
+
+  ---
+  2. DISCORD SENDER SAFE (Node.js)
+
+  - Name: discord-sender-safe
+  - Purpose: Sends messages to Discord webhooks with smart rate limiting
+  - Location: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\discord_sender_safe.js
+  - What it does: Takes queued messages and posts them via webhooks
+  - Features: Token bucket rate limiting, duplicate detection, message coalescing
+  - Rate Limits: 1 message per 3 seconds (20/min), zero 429 errors
+
+  ---
+  3. TELEGRAM COLLECTOR (Python)
+
+  - Name: telegram-collector
+  - Purpose: Collects messages from Telegram channels
+  - Location: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\python\telegram_to_discord.py
+  - What it does: Monitors Telegram sports betting channels and saves messages
+  - Output: Saves to ./inbox directory for processing
+
+  ---
+  4. MESSAGE PROCESSOR (Python)
+
+  - Name: message-processor
+  - Purpose: Processes Telegram messages and queues them
+  - Location: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\python\process_telegram_messages.py
+  - What it does: Takes messages from inbox, processes them, puts in queue
+  - Queues: Organizes into uatb, diamond, chamba categories
+
+  ---
+  5. DISCORD SENDER (Old - Should be removed)
+
+  - Name: discord-sender (ID: 5)
+  - Status: ⚠️ DUPLICATE - Old version that keeps auto-starting
+  - Action Needed: Should be deleted to prevent conflicts
+
+  ---
+  6. WATCHDOG (Node.js)
+
+  - Name: watchdog
+  - Purpose: Monitors all processes and restarts if needed
+  - Location: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\scripts\watchdog.js
+  - What it does: Checks every minute if processes are healthy
+  - Features: Auto-restart dead processes, health monitoring
+
+  ---
+  📁 MAIN DIRECTORIES:
+
+  - Production Folder: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\
+  - Discord Forwarder: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\discord-forwarder\
+  - Python Scripts: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\python\
+  - Message Queues: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\message_queue\
+  - Logs: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\logs\
+
+  ---
+  🔄 DATA FLOW:
+
+  1. Telegram Collector → Gets messages from Telegram
+  2. Message Processor → Processes and queues them
+  3. Discord Sender Safe → Sends to Discord webhooks
+  4. Discord Forwarder → Forwards between Discord servers
+  5. Watchdog → Monitors everything stays running
+
+
+forwarder 49 channels - discord to discord.
+● JUST THIS ONE:
+
+  🎯 DISCORD FORWARDER (Python)
+
+  - Name: discord-forwarder-python
+  - Location: C:\Users\mpmmo\FULL-LOCAL-PRODUCTION\discord-forwarder\forwarder.py
+  - Purpose: Forwards messages from 49 Discord source channels to destination channels via webhooks
+
+  This is the ONE we set up today - the optimized Python forwarder that:
+  - ✅ Fixed rate limiting (10s between channels, 5min between cycles)
+  - ✅ Updated with new working token
+  - ✅ Runs from production folder
+  - ✅ Actively forwarding sports picks (lEAKS, etc.)
+  - ✅ Zero crashes, stable operation
+
+  All the work today was focused on fixing and optimizing THIS SPECIFIC BOT - getting it running from the correct
+  production folder with proper rate limiting to avoid the Discord API bans.

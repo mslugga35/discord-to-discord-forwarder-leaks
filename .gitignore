@@ -1,0 +1,49 @@
+# Logs
+*.log
+*.log.*
+logs/
+
+# Cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Environment variables
+.env
+.env.local
+
+# Configuration files with sensitive data
+config.json
+last_messages.json
+
+# Session files
+*.session
+*.session-journal
+
+# Archive directories
+archive/
+active/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
